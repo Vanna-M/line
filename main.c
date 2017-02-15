@@ -8,31 +8,47 @@
 
 int main() {
 
-  screen s;
-  color c;
+    screen s;
+    color c;
 
-  c.red = 216;
-  c.green = 206;
-  c.blue = 246;
+    clear_screen(s);
 
-  clear_screen(s);
+    //testing image
 
-  draw_line(10,300,300,470,s,c);
-  draw_line(30,50,450,250,s,c);
+    c.red = 255;
+    c.blue = 255;
+    c.green= 255;
 
-  c.red = 250;
-  c.green = 88;
-  c.blue = 130;
+    //octants 1 and 5
+    draw_line(0, 0, XRES-1, YRES-1, s, c);
+    draw_line(0, 0, XRES-1, YRES / 2, s, c);
+    draw_line(XRES-1, YRES-1, 0, YRES / 2, s, c);
 
-  draw_line(0,0,XRES,YRES,s,c);
 
-  c.red = 88;
-  c.green = 251;
-  c.blue = 183;
+    //octants 8 and 4
+    c.blue = 255;
+    draw_line(0, YRES-1, XRES-1, 0, s, c);
+    draw_line(0, YRES-1, XRES-1, YRES/2, s, c);
+    draw_line(XRES-1, 0, 0, YRES/2, s, c);
 
-  draw_line(400,400,405,405,s,c);
-  draw_line(-1,100,50,501,s,c);
+    //octants 2 and 6
+    c.red = 255;
+    c.green = 0;
+    c.blue = 0;
+    draw_line(0, 0, XRES/2, YRES-1, s, c);
+    draw_line(XRES-1, YRES-1, XRES/2, 0, s, c);
 
-  display(s);
-  save_extension(s, "lines.png");
+    //octants 7 and 3
+    c.blue = 255;
+    draw_line(0, YRES-1, XRES/2, 0, s, c);
+    draw_line(XRES-1, 0, XRES/2, YRES-1, s, c);
+
+    //horizontal and vertical
+    c.blue = 0;
+    c.green = 255;
+    draw_line(0, YRES/2, XRES-1, YRES/2, s, c);
+    draw_line(XRES/2, 0, XRES/2, YRES-1, s, c);
+
+    display(s);
+    save_extension(s, "lines.png");
 }

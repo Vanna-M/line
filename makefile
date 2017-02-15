@@ -4,7 +4,6 @@ CC= gcc
 
 all: $(OBJECTS)
 	$(CC) -o main $(OBJECTS)
-	./main
 
 main.o: main.c display.h draw.h ml6.h
 	$(CC) -c main.c
@@ -17,3 +16,6 @@ dsiplay.o: display.c display.h ml6.h
 
 clean:
 	rm *.o *~
+
+run:
+	./main
