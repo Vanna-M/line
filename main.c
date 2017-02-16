@@ -24,7 +24,6 @@ int main() {
     draw_line(0, 0, XRES-1, YRES / 2, s, c);
     draw_line(XRES-1, YRES-1, 0, YRES / 2, s, c);
 
-
     //octants 8 and 4
     c.blue = 255;
     draw_line(0, YRES-1, XRES-1, 0, s, c);
@@ -48,6 +47,17 @@ int main() {
     c.green = 255;
     draw_line(0, YRES/2, XRES-1, YRES/2, s, c);
     draw_line(XRES/2, 0, XRES/2, YRES-1, s, c);
+
+
+    c.red = 255;
+    c.green = 255;
+    c.blue = 0;
+
+    //draw_line(100,100,250,400,s,c);
+    //draw_line(250,400,500,0,s,c);
+    //draw_line(0,0,500,0,s,c);
+    //draw_line(500,100,)
+
 
     display(s);
     save_extension(s, "lines.png");

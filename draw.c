@@ -30,7 +30,7 @@ void draw_line(int x0, int y0, int x1, int y1, screen s, color c) {
     int b = -1 *(xmax - x);
 
     //if q1 or q8; 0 < m < 1 u -1 > m > 0
-    if (a <= -b){
+    if (abs(a) <= -b){
         //if q1; bc a determines sign of slope
         if(a > 0){
             d = (2 * a) + b;
@@ -103,7 +103,7 @@ void draw_line(int x0, int y0, int x1, int y1, screen s, color c) {
         //q7
         else{
             int d = a - 2*b;
-
+            printf("%d,%d to %d,%d\n",x0,y0,x1,y1);
             while(y > ymax){
                 //plot old point
                 plot(s,c,x,y);

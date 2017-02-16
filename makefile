@@ -18,4 +18,5 @@ clean:
 	rm *.o *~
 
 run:
+	make
 	./main
