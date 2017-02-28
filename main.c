@@ -14,7 +14,7 @@ int main() {
     clear_screen(s);
 
     //testing image
-
+    /*
     c.red = 255;
     c.blue = 255;
     c.green= 255;
@@ -47,17 +47,17 @@ int main() {
     c.green = 255;
     draw_line(0, YRES/2, XRES-1, YRES/2, s, c);
     draw_line(XRES/2, 0, XRES/2, YRES-1, s, c);
-
+    */
 
     c.red = 255;
     c.green = 255;
     c.blue = 0;
 
-    //draw_line(100,100,250,400,s,c);
-    //draw_line(250,400,500,0,s,c);
-    //draw_line(0,0,500,0,s,c);
-    //draw_line(500,100,)
-
+    draw_line(100,100,250,400,s,c);
+    draw_line(250,400,400,100,s,c);
+    draw_line(400,100,50,300,s,c);
+    draw_line(50,300,450,300,s,c);
+    draw_line(450,300,100,100,s,c);
 
     display(s);
     save_extension(s, "lines.png");
